@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anyterial-portal"
+version = "0.1.0"
+description = "Anyterial portal static site generated with httk-web."
+readme = "README.md"
+license = "AGPL-3.0+"
+requires-python = ">=3.11"
+authors = [{ name = "Rickard Armiento", email = "rickard-gpg@armiento.net" }]
+dependencies = [
+  "httk-web @ git+https://github.com/httk/httk-web@develop",
+]
+classifiers = [
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+]
+
+[tool.setuptools]
+py-modules = []

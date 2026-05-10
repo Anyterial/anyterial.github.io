@@ -1,13 +1,12 @@
--------
-Title: Anyterial - Status
-Name: Status
-------
+---
+title: Anyterial - Status
+description: Service status for Anyterial resources.
+template: default
+base_template: base_default
+---
 
-Anyterial status
-================
+# Status
 
-This status page is also accessible independently as: https://status.anyterial.se
+The Anyterial status page is also available independently at [https://status.anyterial.se](https://status.anyterial.se).
 
-<br/>
-
-<iframe src="https://anyterial.betteruptime.com" width="100%" height="800"></iframe>
+<iframe src="https://anyterial.betteruptime.com" width="100%" height="800" loading="lazy" title="Anyterial service status"></iframe>

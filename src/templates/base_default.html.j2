@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ description if description else 'Anyterial is a portal to curated materials databases, computational tools, documentation, and community resources.' }}" />
+    <title>{{ title if title else 'Anyterial' }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600..900,70,1&family=Inter:wght@400;520;650;760;850&display=swap" rel="stylesheet" />
+    <link rel="icon" href="{{ page.relbaseurl }}/favicon.ico" />
+    <link rel="stylesheet" href="{{ page.relbaseurl }}/styles.css" />
+  </head>
+  <body>
+    <input class="theme-radio" type="radio" name="theme" id="theme-data" aria-label="Use data theme" />
+    <input class="theme-radio" type="radio" name="theme" id="theme-twilight" aria-label="Use twilight theme" checked />
+    <input class="theme-radio" type="radio" name="theme" id="theme-light" aria-label="Use light theme" />
+
+    {% set current_page = page.relurl|replace('.html', '') if page.relurl else 'index' %}
+    {% if current_page == 'index' %}
+      {% set current_section = 'home' %}
+    {% elif current_page in ['about', 'publications', 'status', 'subscribe'] %}
+      {% set current_section = current_page %}
+    {% else %}
+      {% set current_section = '' %}
+    {% endif %}
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand" href="{{ page.relbaseurl }}/index.html" aria-label="Anyterial home">
+          <span class="mark" aria-hidden="true">
+            <span class="mark-node n1"></span><span class="mark-node n2"></span><span class="mark-node n3"></span><span class="mark-node n4"></span><span class="mark-node n5"></span><span class="mark-node n6"></span>
+            <span class="mark-a">A</span>
+          </span>
+          <span class="brand-name">Anyterial</span>
+        </a>
+
+        <div class="nav-links">
+          <a class="{% if current_section == 'home' %}active{% endif %}" href="{{ page.relbaseurl }}/index.html#databases">Databases</a>
+          <a href="{{ page.relbaseurl }}/index.html#tools">Tools</a>
+          <a class="{% if current_section == 'publications' %}active{% endif %}" href="{{ page.relbaseurl }}/publications.html">Publications</a>
+          <a class="{% if current_section == 'status' %}active{% endif %}" href="{{ page.relbaseurl }}/status.html">Status</a>
+          <a class="{% if current_section == 'about' %}active{% endif %}" href="{{ page.relbaseurl }}/about.html">About</a>
+        </div>
+
+        <div class="theme-toggle" role="group" aria-label="Theme selector">
+          <label for="theme-data" title="Data theme"><span aria-hidden="true">◐</span><span class="sr-only">Data</span></label>
+          <label for="theme-twilight" title="Twilight theme"><span aria-hidden="true">⌁</span><span class="sr-only">Twilight</span></label>
+          <label for="theme-light" title="Light theme"><span aria-hidden="true">☼</span><span class="sr-only">Light</span></label>
+        </div>
+      </nav>
+    </header>
+
+    {{ content }}
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <div>
+          <div class="footer-brand">
+            <span class="mark small" aria-hidden="true"><span class="mark-a">A</span></span>
+            <span>Anyterial</span>
+          </div>
+          <p>Anyterial is part of the High-Throughput Toolkit ecosystem for materials discovery.</p>
+          <a href="https://httk.org">About httk <span aria-hidden="true">→</span></a>
+        </div>
+        <div>
+          <h3>Resources</h3>
+          <a href="{{ page.relbaseurl }}/index.html#databases">Databases</a>
+          <a href="{{ page.relbaseurl }}/index.html#tools">Tools</a>
+          <a href="{{ page.relbaseurl }}/publications.html">Publications</a>
+          <a href="{{ page.relbaseurl }}/status.html">Status</a>
+        </div>
+        <div>
+          <h3>Community</h3>
+          <a href="https://github.com/orgs/anyterial/discussions">GitHub forum</a>
+          <a href="https://github.com/anyterial/discussions/discussions/categories/announcements.atom">RSS feed</a>
+          <a href="{{ page.relbaseurl }}/subscribe.html">Subscribe</a>
+          <a href="{{ page.relbaseurl }}/about.html">About</a>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <a href="{{ page.relbaseurl }}/about.html#legal">Privacy and legal information</a>
+          <p class="footer-note">This website does not use cookies for tracking.</p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Anyterial team · Open data, open source, and open science.</p>
+    </footer>
+  </body>
+</html>

@@ -1,10 +1,11 @@
--------
-Title: Anyterial - Welcome
-Name: Subscribed
-------
+---
+title: Anyterial - Welcome
+template: default
+base_template: base_default
+---
 
 # Subscribed
 
-Thank you for subscribing to our announcements email list.
+Thank you for subscribing to the Anyterial announcements email list.
 
-- Go to our main page: [Anyterial](https://www.anyterial.se).
+- [Go to the Anyterial front page](https://www.anyterial.se)
