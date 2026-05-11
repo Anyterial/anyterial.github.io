@@ -2192,3 +2192,29 @@ html[data-theme="light"] .menu-toggle {
     height: 16px;
   }
 }
+
+/* Make the closing panel subtly warmer and darker than the page background. */
+.split-panel {
+  background: #ffe8dc;
+}
+
+html[data-theme="light"] .split-panel {
+  background: #fff1ea;
+}
+
+html[data-theme="dark"] .split-panel {
+  background: rgba(58, 35, 30, 0.94);
+}
+
+/* Requested twilight surface colors. */
+html[data-theme="twilight"] {
+  --page-bg: #fef6ec;
+}
+
+html[data-theme="twilight"] body {
+  background: #fef6ec;
+}
+
+html[data-theme="twilight"] .split-panel {
+  background: #fbf1e7;
+}
