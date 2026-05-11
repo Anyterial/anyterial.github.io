@@ -1248,3 +1248,352 @@ body {
 .followit--follow-form-container .form-preview {
   background: var(--card-surface);
 }
+
+/* Typography and altermagnets-style theme switch refinements. */
+:root {
+  --line: rgba(7, 48, 58, 0.18);
+  --surface-soft: rgba(255, 253, 248, 0.72);
+  --accent-rgb: 244, 124, 77;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #eaf7f8;
+  --ink-2: #c7dee3;
+  --muted: #9fb9c0;
+  --page-bg: #061f26;
+  --card-surface: rgba(11, 49, 58, 0.82);
+  --border: #28545e;
+  --line: rgba(234, 247, 248, 0.22);
+  --surface-soft: rgba(11, 49, 58, 0.86);
+  --accent: #ff9b6d;
+  --accent-rgb: 255, 155, 109;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --ink: #092b34;
+  --ink-2: #35535b;
+  --muted: #67767b;
+  --page-bg: #fbfaf7;
+  --card-surface: rgba(255, 255, 255, 0.82);
+  --border: #d9dee0;
+  --line: rgba(9, 43, 52, 0.18);
+  --surface-soft: rgba(255, 255, 255, 0.88);
+  --accent: #f47c4d;
+  --accent-rgb: 244, 124, 77;
+}
+
+h1,
+h2,
+h3,
+.brand-name,
+.metric strong {
+  font-weight: 650;
+}
+
+.hero h1 {
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+.route-card h2,
+.split-panel h2,
+.content-card h1,
+.content-card h2 {
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.brand-name {
+  font-weight: 700;
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  padding: 4px;
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+.theme-btn {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  display: inline-grid;
+  place-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255,255,255,0.78);
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  filter: brightness(0) invert(1) contrast(1.08);
+}
+
+.theme-btn:hover,
+.theme-btn:focus-visible {
+  color: #fff;
+  border-color: rgba(255,255,255,0.28);
+  outline: none;
+}
+
+.theme-btn.is-active {
+  border-color: rgba(var(--accent-rgb), 0.58);
+  background: rgba(var(--accent-rgb), 0.22);
+}
+
+html[data-theme="light"] .theme-switch {
+  border-color: var(--line);
+  background: var(--surface-soft);
+  box-shadow: 0 12px 26px rgba(7, 48, 58, 0.08);
+}
+
+html[data-theme="light"] .theme-icon {
+  filter: none;
+}
+
+html[data-theme="light"] .theme-btn:hover,
+html[data-theme="light"] .theme-btn:focus-visible {
+  border-color: var(--line);
+}
+
+@media (max-width: 620px) {
+  .theme-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* Final visual tuning from screenshot review. */
+:root {
+  --page-bg: #fff0df;
+  --hero-link: #2d63c8;
+}
+
+body {
+  background: #fff0df;
+}
+
+.theme-switch {
+  background: rgba(255,255,255,0.06);
+}
+
+.theme-btn.is-active {
+  border-color: #f59675;
+  background: #f59675;
+  color: #082d35;
+}
+
+.theme-btn.is-active .theme-icon {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(30%) saturate(832%) hue-rotate(145deg) brightness(88%) contrast(99%);
+}
+
+html[data-theme="light"] .theme-btn.is-active .theme-icon {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(30%) saturate(832%) hue-rotate(145deg) brightness(88%) contrast(99%);
+}
+
+.hero-lede a,
+.split-panel .inline-link {
+  color: var(--hero-link);
+}
+
+.split-panel h2 {
+  font-size: clamp(1.45rem, 2.2vw, 2.05rem);
+  letter-spacing: -0.02em;
+}
+
+/* Restore pre-toggle-review background color; keep the theme control refinements. */
+:root {
+  --page-bg: #fff3e2;
+}
+
+body {
+  background: var(--page-bg);
+}
+
+/* Slightly lighter default twilight surface. */
+html[data-theme="twilight"] {
+  --page-bg: #fff5e8;
+}
+
+/* Restore subtle flat category card tints. */
+.database {
+  background: rgba(239, 249, 241, 0.72);
+}
+
+.tools {
+  background: rgba(255, 241, 232, 0.72);
+}
+
+.docs {
+  background: rgba(244, 246, 255, 0.72);
+}
+
+/* Softer category card tints. */
+.database {
+  background: rgba(247, 252, 248, 0.74);
+}
+
+.tools {
+  background: rgba(255, 247, 242, 0.74);
+}
+
+.docs {
+  background: rgba(249, 250, 255, 0.74);
+}
+
+/* Lighten category card surfaces while keeping subtle hue. */
+.database {
+  background: rgba(250, 253, 251, 0.82);
+}
+
+.tools {
+  background: rgba(255, 250, 247, 0.82);
+}
+
+.docs {
+  background: rgba(251, 252, 255, 0.82);
+}
+
+/* Lighten default twilight page background to match lighter card surfaces. */
+html[data-theme="twilight"] {
+  --page-bg: #fff8f0;
+}
+
+/* Lighten category cards another step toward white. */
+.database {
+  background: rgba(253, 254, 253, 0.9);
+}
+
+.tools {
+  background: rgba(255, 253, 251, 0.9);
+}
+
+.docs {
+  background: rgba(253, 254, 255, 0.9);
+}
+
+/* Shift docs card tint slightly toward blue-purple. */
+.docs {
+  background: rgba(253, 253, 255, 0.9);
+}
+
+/* Nudge docs card a little further toward pale purple. */
+.docs {
+  background: rgba(253, 252, 255, 0.9);
+}
+
+/* Theme-specific surface contrast. */
+html[data-theme="light"] {
+  --page-bg: #fdfdfb;
+  --card-surface: rgba(255, 255, 255, 0.96);
+}
+
+html[data-theme="light"] body {
+  background: var(--page-bg);
+}
+
+html[data-theme="light"] .route-card,
+html[data-theme="light"] .split-panel,
+html[data-theme="light"] .metrics,
+html[data-theme="light"] .content-card {
+  background: var(--card-surface);
+}
+
+html[data-theme="light"] .database {
+  background: rgba(253, 255, 253, 0.98);
+}
+
+html[data-theme="light"] .tools {
+  background: rgba(255, 254, 253, 0.98);
+}
+
+html[data-theme="light"] .docs {
+  background: rgba(254, 253, 255, 0.98);
+}
+
+html[data-theme="dark"] .route-card,
+html[data-theme="dark"] .split-panel,
+html[data-theme="dark"] .metrics,
+html[data-theme="dark"] .content-card {
+  background: rgba(10, 39, 47, 0.92);
+}
+
+html[data-theme="dark"] .database {
+  background: rgba(11, 45, 42, 0.94);
+}
+
+html[data-theme="dark"] .tools {
+  background: rgba(52, 30, 25, 0.94);
+}
+
+html[data-theme="dark"] .docs {
+  background: rgba(28, 32, 54, 0.94);
+}
+
+html[data-theme="dark"] .resource-list {
+  background: rgba(4, 20, 25, 0.42);
+}
+
+/* Extra-bright light mode. */
+html[data-theme="light"] {
+  --page-bg: #ffffff;
+  --card-surface: rgba(255, 255, 255, 0.995);
+}
+
+html[data-theme="light"] .database,
+html[data-theme="light"] .tools,
+html[data-theme="light"] .docs,
+html[data-theme="light"] .route-card,
+html[data-theme="light"] .split-panel,
+html[data-theme="light"] .metrics,
+html[data-theme="light"] .content-card {
+  background: rgba(255, 255, 255, 0.995);
+}
+
+html[data-theme="light"] .resource-list {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Light mode uses a light top bar with a clear separator. */
+html[data-theme="light"] .site-header {
+  background: #ffffff;
+  color: var(--ink);
+  border-bottom: 1px solid #d8dde0;
+  box-shadow: none;
+}
+
+html[data-theme="light"] .brand-name,
+html[data-theme="light"] .nav-links a {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .nav-links a.active::after,
+html[data-theme="light"] .nav-links a:hover::after {
+  background: var(--accent);
+}
+
+html[data-theme="light"] .theme-switch {
+  border-color: #d8dde0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+html[data-theme="light"] .theme-btn {
+  color: var(--ink-soft);
+}
