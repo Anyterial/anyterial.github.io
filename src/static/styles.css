@@ -99,9 +99,6 @@ a:hover { color: var(--accent-strong); }
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
   background: var(--nav);
   color: white;
   border-bottom: 1px solid color-mix(in srgb, var(--border), transparent 45%);
@@ -400,6 +397,21 @@ h1 {
   min-height: 450px;
   padding: 28px;
   border-radius: var(--radius-lg);
+}
+
+.route-card-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 981px) {
+  .route-card-intro {
+    min-height: 190px;
+  }
+
+  .route-card-intro .inline-link {
+    margin-top: auto;
+  }
 }
 
 .database { background: linear-gradient(135deg, color-mix(in srgb, var(--database-soft), transparent 42%), var(--paper) 44%); }
@@ -2144,4 +2156,39 @@ html[data-theme="light"] .menu-toggle {
 /* Keep the hero headline from ballooning on wide browser windows. */
 .hero h1 {
   font-size: 3.05rem;
+}
+
+/* Keep the theme selector present but visually quieter until interaction. */
+.theme-switch {
+  gap: 4px;
+  padding: 3px;
+  opacity: 0.58;
+  transition: opacity 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.theme-switch:hover,
+.theme-switch:focus-within {
+  opacity: 1;
+}
+
+.theme-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.theme-icon {
+  width: 17px;
+  height: 17px;
+}
+
+@media (max-width: 560px) {
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .theme-icon {
+    width: 16px;
+    height: 16px;
+  }
 }
