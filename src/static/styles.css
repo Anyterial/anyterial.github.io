@@ -1105,3 +1105,146 @@ body {
   .hero h1 { font-size: 3.05rem; }
   .route-card { min-height: auto; }
 }
+
+/* Flat color pass matching the provided PNG more closely. */
+:root {
+  --page-bg: #fff3e2;
+  --page-bg-2: #fff8ee;
+  --card-surface: rgba(255, 253, 248, 0.72);
+  --databases-accent: #98c8aa;
+  --databases-soft: #e7f2ea;
+  --databases-border: #c9dfcf;
+  --tools-accent: #f09a7d;
+  --tools-soft: #ffe4d8;
+  --tools-border: #ebc7b7;
+  --docs-accent: #9fb0ec;
+  --docs-soft: #e9edff;
+  --docs-border: #c8d0ed;
+}
+
+body {
+  background: var(--page-bg);
+}
+
+.site-header,
+.site-footer {
+  background: #082d35;
+}
+
+.hero-visual {
+  background: transparent;
+}
+
+.route-card,
+.split-panel,
+.metrics,
+.content-card {
+  background: var(--card-surface);
+}
+
+.database,
+.tools,
+.docs {
+  background: var(--card-surface);
+}
+
+.database {
+  border-color: var(--databases-border);
+}
+
+.tools {
+  border-color: var(--tools-border);
+}
+
+.docs {
+  border-color: var(--docs-border);
+}
+
+.database .icon-badge,
+.database .metric-icon {
+  background: var(--databases-soft);
+  color: #244f38 !important;
+}
+
+.tools .icon-badge,
+.tools .metric-icon {
+  background: var(--tools-soft);
+  color: #7a321f !important;
+}
+
+.docs .icon-badge,
+.docs .metric-icon {
+  background: var(--docs-soft);
+  color: #273b86 !important;
+}
+
+.database .inline-link,
+.database .footer-link {
+  color: #075f46;
+}
+
+.tools .inline-link,
+.tools .footer-link {
+  color: #c54c28;
+}
+
+.docs .inline-link,
+.docs .footer-link {
+  color: #2d63c8;
+}
+
+.database .resource-list {
+  border-color: var(--databases-border);
+}
+
+.tools .resource-list {
+  border-color: var(--tools-border);
+}
+
+.docs .resource-list {
+  border-color: var(--docs-border);
+}
+
+.resource-list {
+  background: rgba(255, 252, 246, 0.52);
+}
+
+.database .resource-list a {
+  border-bottom-color: var(--databases-border);
+}
+
+.tools .resource-list a {
+  border-bottom-color: var(--tools-border);
+}
+
+.docs .resource-list a {
+  border-bottom-color: var(--docs-border);
+}
+
+.resource-list a:last-child {
+  border-bottom: 0;
+}
+
+.metric:nth-child(1) .metric-icon {
+  background: var(--databases-soft);
+  color: #244f38;
+}
+
+.metric:nth-child(2) .metric-icon {
+  background: var(--tools-soft);
+  color: #7a321f;
+}
+
+.metric:nth-child(3) .metric-icon {
+  background: var(--docs-soft);
+  color: #273b86;
+}
+
+.metric:nth-child(4) .metric-icon {
+  background: #ececff;
+  color: #39408f;
+}
+
+.followit--follow-form-container .form-preview {
+  background: var(--card-surface);
+}
