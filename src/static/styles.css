@@ -423,6 +423,24 @@ h1 {
   font-size: 1.6rem;
   font-weight: 850;
 }
+
+.icon-badge img,
+.metric-icon img,
+.metric-icon svg {
+  width: 56%;
+  height: 56%;
+  display: block;
+}
+
+.metric-icon svg {
+  fill: currentColor;
+}
+
+.icon-badge img,
+.metric-icon img {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.92;
+}
 .database .icon-badge { background: var(--database-soft); color: var(--database); }
 .tools .icon-badge { background: var(--accent-soft); color: var(--accent-strong); }
 .docs .icon-badge { background: var(--docs-soft); color: var(--docs); }
@@ -785,6 +803,22 @@ body {
   object-fit: contain;
 }
 
+.brand-logo-lightbar {
+  display: none;
+}
+
+.brand-logo-darkbar {
+  display: block;
+}
+
+html[data-theme="light"] .brand-logo-lightbar {
+  display: block;
+}
+
+html[data-theme="light"] .brand-logo-darkbar {
+  display: none;
+}
+
 .brand-name {
   color: #fff8ec;
   font-size: clamp(2.1rem, 3vw, 2.65rem);
@@ -1076,6 +1110,37 @@ body {
   color: rgba(255,255,255,0.72);
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.social-icon-link {
+  display: inline-grid;
+  place-items: center;
+  width: 1.8em;
+  height: 1.8em;
+  color: currentColor;
+  line-height: 1;
+}
+
+.social-icon {
+  display: block;
+  width: 1.8em;
+  height: 1.8em;
+  fill: currentColor;
+}
+
+.social-links .social-icon-link {
+  color: var(--ink);
+  filter: none;
+}
+
+.footer-social .social-icon-link {
+  color: rgba(255,255,255,0.82);
+  filter: none;
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus-visible {
+  color: var(--accent);
 }
 
 @media (max-width: 980px) {
@@ -1596,4 +1661,487 @@ html[data-theme="light"] .theme-switch {
 
 html[data-theme="light"] .theme-btn {
   color: var(--ink-soft);
+}
+
+/* Responsive hamburger navigation. */
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+  cursor: pointer;
+  place-content: center;
+}
+
+.menu-toggle-lines,
+.menu-toggle-lines::before,
+.menu-toggle-lines::after {
+  display: block;
+  width: 19px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.menu-toggle-lines {
+  position: relative;
+}
+
+.menu-toggle-lines::before,
+.menu-toggle-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle-lines::before { transform: translateY(-6px); }
+.menu-toggle-lines::after { transform: translateY(6px); }
+
+body.nav-open .menu-toggle-lines { background: transparent; }
+body.nav-open .menu-toggle-lines::before { transform: rotate(45deg); }
+body.nav-open .menu-toggle-lines::after { transform: rotate(-45deg); }
+
+html[data-theme="light"] .menu-toggle {
+  border-color: #d8dde0;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+@media (max-width: 880px) {
+  .nav-shell {
+    position: relative;
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .brand {
+    min-width: 0;
+    margin-right: auto;
+  }
+
+  .brand-name {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+  }
+
+  .menu-toggle {
+    display: grid;
+    order: 2;
+  }
+
+  .theme-switch {
+    order: 3;
+  }
+
+  .nav-links {
+    position: absolute;
+    z-index: 50;
+    top: calc(100% - 10px);
+    right: 0;
+    width: min(280px, calc(100vw - 32px));
+    display: grid;
+    gap: 0;
+    margin-left: 0;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 16px;
+    background: #082d35;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  body.nav-open .nav-links {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    padding: 13px 14px;
+    border-radius: 10px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(255,255,255,0.08);
+  }
+
+  html[data-theme="light"] .nav-links {
+    border-color: #d8dde0;
+    background: #ffffff;
+    box-shadow: 0 18px 44px rgba(7, 48, 58, 0.12);
+  }
+
+  html[data-theme="light"] .nav-links a:hover,
+  html[data-theme="light"] .nav-links a.active {
+    background: #f4f6f7;
+  }
+}
+
+@media (max-width: 560px) {
+  .theme-switch {
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .theme-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .theme-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Switch to hamburger before the top-bar links can wrap. */
+@media (max-width: 1040px) {
+  .nav-shell {
+    position: relative;
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .brand {
+    min-width: 0;
+    margin-right: auto;
+  }
+
+  .brand-name {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+  }
+
+  .menu-toggle {
+    display: grid;
+    order: 2;
+  }
+
+  .theme-switch {
+    order: 3;
+  }
+
+  .nav-links {
+    position: absolute;
+    z-index: 50;
+    top: calc(100% - 10px);
+    right: 0;
+    width: min(280px, calc(100vw - 32px));
+    display: grid;
+    gap: 0;
+    margin-left: 0;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 16px;
+    background: #082d35;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  body.nav-open .nav-links {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    padding: 13px 14px;
+    border-radius: 10px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(255,255,255,0.08);
+  }
+
+  html[data-theme="light"] .nav-links {
+    border-color: #d8dde0;
+    background: #ffffff;
+    box-shadow: 0 18px 44px rgba(7, 48, 58, 0.12);
+  }
+
+  html[data-theme="light"] .nav-links a:hover,
+  html[data-theme="light"] .nav-links a.active {
+    background: #f4f6f7;
+  }
+}
+
+/* Front-page hero image replaces generated CSS/SVG atom cluster. */
+.hero-visual-image {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  min-height: 392px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-visual-image::before,
+.hero-visual-image .orbit,
+.hero-visual-image .node,
+.hero-visual-image .bonds {
+  display: none;
+}
+
+.hero-visual-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Give hero copy more horizontal room now that the visual is a bitmap. */
+.hero {
+  grid-template-columns: minmax(430px, 0.95fr) minmax(480px, 1.05fr);
+}
+
+.hero h1 {
+  max-width: 640px;
+}
+
+.hero-lede {
+  max-width: 520px;
+}
+
+/* Wider hero copy and cheaper lightweight shadows. */
+:root {
+  --soft-shadow: 0 3px 10px rgba(7, 48, 58, 0.08);
+  --shadow: 0 4px 12px rgba(7, 48, 58, 0.10);
+}
+
+.hero {
+  grid-template-columns: minmax(620px, 1.35fr) minmax(360px, 0.65fr);
+}
+
+.hero h1 {
+  max-width: 820px;
+}
+
+.hero-lede {
+  max-width: 680px;
+}
+
+.route-card,
+.split-panel,
+.metrics,
+.content-card,
+.resource-list,
+.content-card iframe,
+.theme-switch,
+.nav-links {
+  box-shadow: 0 2px 8px rgba(7, 48, 58, 0.075);
+}
+
+.site-header,
+.site-footer,
+.button.primary {
+  box-shadow: none;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Let hero copy overlap the visual instead of pushing it aside. */
+.hero {
+  position: relative;
+  grid-template-columns: minmax(560px, 0.9fr) minmax(560px, 1.1fr);
+  gap: 0;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  padding-right: 28px;
+}
+
+.hero-visual-image {
+  position: relative;
+  z-index: 1;
+  margin-left: -120px;
+}
+
+.hero-visual-image::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 38%;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--page-bg) 0%, rgba(255,255,255,0) 100%);
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-copy {
+    padding-right: 0;
+  }
+
+  .hero-visual-image {
+    margin-left: 0;
+  }
+}
+
+/* Increase hero copy width and overlap further into the visual. */
+.hero {
+  grid-template-columns: minmax(720px, 1.05fr) minmax(460px, 0.95fr);
+}
+
+.hero h1 {
+  max-width: 960px;
+}
+
+.hero-lede {
+  max-width: 760px;
+}
+
+.hero-visual-image {
+  margin-left: -190px;
+}
+
+.hero-visual-image::after {
+  width: 46%;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual-image {
+    margin-left: 0;
+  }
+}
+
+/* Move hero image further left under the copy. */
+.hero-visual-image {
+  margin-left: -250px;
+}
+
+@media (max-width: 980px) {
+  .hero-visual-image {
+    margin-left: 0;
+  }
+}
+
+/* Pull hero content closer to the top bar. */
+.hero {
+  padding-top: 42px;
+}
+
+/* Aggressively tighten hero vertical whitespace. */
+.hero {
+  min-height: 360px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: auto;
+    padding-top: 18px;
+    padding-bottom: 8px;
+  }
+}
+
+/* Tighten hero spacing one more step. */
+.hero {
+  min-height: 300px;
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: auto;
+    padding-top: 8px;
+    padding-bottom: 2px;
+  }
+}
+
+/* Keep the bitmap proportional under browser zoom. */
+.hero {
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  min-height: 460px;
+  padding-top: 54px;
+  padding-bottom: 46px;
+}
+
+.hero-copy {
+  min-width: 0;
+  max-width: 744px;
+}
+
+.hero h1 {
+  max-width: 744px;
+}
+
+.hero-lede {
+  max-width: 600px;
+}
+
+.hero-visual-image {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 58%;
+  width: min(72vw, 920px);
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  height: 100%;
+  margin-left: 0;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+.hero-visual-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 420px;
+    padding-top: 42px;
+    padding-bottom: 36px;
+  }
+
+  .hero-visual-image {
+    left: 62%;
+    width: 118vw;
+  }
+}
+
+/* Keep the hero headline from ballooning on wide browser windows. */
+.hero h1 {
+  font-size: 3.05rem;
 }

@@ -25,15 +25,21 @@
     <header class="site-header">
       <nav class="nav-shell" aria-label="Main navigation">
         <a class="brand" href="{{ page.relbaseurl }}/index.html" aria-label="Anyterial home">
-          <img class="brand-logo" src="{{ page.relbaseurl }}/img/anyterial_logo_color.svg" alt="" aria-hidden="true" />
+          <img class="brand-logo brand-logo-lightbar" src="{{ page.relbaseurl }}/img/anyterial_logo_color.svg" alt="" aria-hidden="true" />
+          <img class="brand-logo brand-logo-darkbar" src="{{ page.relbaseurl }}/img/anyterial_logo_color_blackbg.svg" alt="" aria-hidden="true" />
           <span class="brand-name">Anyterial</span>
         </a>
 
-        <div class="nav-links">
+        <button type="button" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">
+          <span class="menu-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="nav-links" id="primary-nav">
           <a class="{% if current_section == 'home' %}active{% endif %}" href="{{ page.relbaseurl }}/index.html#databases">Databases</a>
           <a href="{{ page.relbaseurl }}/index.html#tools">Tools</a>
-          <a class="{% if current_section == 'publications' %}active{% endif %}" href="{{ page.relbaseurl }}/publications.html">Docs</a>
-          <a href="{{ page.relbaseurl }}/index.html#community">Community</a>
+          <a class="{% if current_section == 'publications' %}active{% endif %}" href="{{ page.relbaseurl }}/index.html#docs">Docs</a>
+          <a class="{% if current_section == 'publications' %}active{% endif %}" href="{{ page.relbaseurl }}/publications.html">Publications</a>
           <a class="{% if current_section == 'about' %}active{% endif %}" href="{{ page.relbaseurl }}/about.html">About</a>
         </div>
 
@@ -57,7 +63,7 @@
       <div class="footer-shell">
         <div>
           <div class="footer-brand">
-            <img class="footer-logo" src="{{ page.relbaseurl }}/img/anyterial_logo_flat_white.svg" alt="Anyterial" />
+            <img class="footer-logo" src="{{ page.relbaseurl }}/img/anyterial_logo_greyscale.svg" alt="Anyterial" />
           </div>
         </div>
         <div>
@@ -68,7 +74,7 @@
           <h3>Quick links</h3>
           <a href="{{ page.relbaseurl }}/index.html#databases">Databases</a>
           <a href="{{ page.relbaseurl }}/index.html#tools">Tools</a>
-          <a href="{{ page.relbaseurl }}/publications.html">Docs</a>
+          <a href="{{ page.relbaseurl }}/index.html#docs">Docs</a>
           <a href="{{ page.relbaseurl }}/index.html#community">Community</a>
           <a href="{{ page.relbaseurl }}/about.html">About</a>
         </div>
@@ -83,11 +89,7 @@
       <div class="footer-bottom">
         <p class="copyright">© 2026 Anyterial team · This website does not use cookies for tracking.</p>
         <div class="footer-social" aria-label="Social links">
-          <a href="https://github.com/anyterial">GitHub</a>
-          <a href="https://github.com/anyterial/discussions/discussions/categories/announcements.atom">RSS</a>
-          <a href="https://x.com/anyterial">X</a>
-          <a href="https://www.linkedin.com/company/anyterial">LinkedIn</a>
-          <a href="https://www.youtube.com/@anyterial">YouTube</a>
+          {% include "social_icons.html.j2" %}
         </div>
       </div>
     </footer>
