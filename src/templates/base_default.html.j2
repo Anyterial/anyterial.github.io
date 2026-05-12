@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="twilight">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ description if description else 'Anyterial is a portal to curated materials databases, computational tools, documentation, and community resources.' }}" />
+    <title>{{ title if title else 'Anyterial' }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,700&family=Inter:wght@400;520;650;760&display=swap" rel="stylesheet" />
+    <link rel="icon" href="{{ page.relbaseurl }}/favicon.ico" />
+    <link rel="stylesheet" href="{{ page.relbaseurl }}/styles.css" />
+    <script defer src="{{ page.relbaseurl }}/app.js"></script>
+  </head>
+  <body>
+    {% set current_page = page.relurl|replace('.html', '') if page.relurl else 'index' %}
+    {% if current_page == 'index' %}
+      {% set current_section = 'home' %}
+    {% elif current_page in ['about', 'publications', 'status', 'subscribe'] %}
+      {% set current_section = current_page %}
+    {% else %}
+      {% set current_section = '' %}
+    {% endif %}
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand" href="{{ page.relbaseurl }}/index.html" aria-label="Anyterial home">
+          <img class="brand-logo brand-logo-lightbar" src="{{ page.relbaseurl }}/img/anyterial_logo_color.svg" alt="" aria-hidden="true" />
+          <img class="brand-logo brand-logo-darkbar" src="{{ page.relbaseurl }}/img/anyterial_logo_color_blackbg.svg" alt="" aria-hidden="true" />
+          <span class="brand-name">Anyterial</span>
+        </a>
+
+        <button type="button" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">
+          <span class="menu-toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <div class="nav-links" id="primary-nav">
+          <a class="{% if current_section == 'home' %}active{% endif %}" href="{{ page.relbaseurl }}/index.html#databases">Databases</a>
+          <a href="{{ page.relbaseurl }}/index.html#tools">Tools</a>
+          <a class="{% if current_section == 'publications' %}active{% endif %}" href="{{ page.relbaseurl }}/index.html#docs">Docs</a>
+          <a class="{% if current_section == 'publications' %}active{% endif %}" href="{{ page.relbaseurl }}/publications.html">Publications</a>
+          <a class="{% if current_section == 'about' %}active{% endif %}" href="{{ page.relbaseurl }}/about.html">About</a>
+        </div>
+
+        <div class="theme-switch" role="group" aria-label="Theme">
+          <button type="button" class="theme-btn" data-theme-option="dark" aria-label="Use dark theme" title="Dark mode">
+            <img class="theme-icon" src="{{ page.relbaseurl }}/icons/Hicon_Pack_1/moon.svg" alt="" aria-hidden="true" />
+          </button>
+          <button type="button" class="theme-btn" data-theme-option="twilight" aria-label="Use twilight theme" title="Twilight mode">
+            <img class="theme-icon" src="{{ page.relbaseurl }}/icons/Hicon_Pack_1/sun-half.svg" alt="" aria-hidden="true" />
+          </button>
+          <button type="button" class="theme-btn" data-theme-option="light" aria-label="Use light theme" title="Light mode">
+            <img class="theme-icon" src="{{ page.relbaseurl }}/icons/Hicon_Pack_1/sun.svg" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    {{ content }}
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <div>
+          <div class="footer-brand">
+            <img class="footer-logo" src="{{ page.relbaseurl }}/img/anyterial_logo_greyscale.svg" alt="Anyterial" />
+          </div>
+        </div>
+        <div>
+          <p>Anyterial is part of the High-Throughput Toolkit ecosystem for materials discovery.</p>
+          <a href="https://httk.org">About httk <span aria-hidden="true">→</span></a>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <a href="{{ page.relbaseurl }}/index.html#databases">Databases</a>
+          <a href="{{ page.relbaseurl }}/index.html#tools">Tools</a>
+          <a href="{{ page.relbaseurl }}/index.html#docs">Docs</a>
+          <a href="https://github.com/orgs/anyterial/discussions">Community</a>
+          <a href="{{ page.relbaseurl }}/about.html">About</a>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <a href="{{ page.relbaseurl }}/about.html#legal">Terms of use</a>
+          <a href="{{ page.relbaseurl }}/about.html#legal">Privacy and legal information</a>
+          <a href="{{ page.relbaseurl }}/about.html#legal">Cookies</a>
+          <a href="{{ page.relbaseurl }}/about.html#legal">License</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Anyterial · This website does not use cookies.</p>
+        <div class="footer-social" aria-label="Social links">
+          {% include "social_icons.html.j2" %}
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
