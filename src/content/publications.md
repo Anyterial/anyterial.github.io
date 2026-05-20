@@ -19,19 +19,19 @@ These publications contributed to the database and key methodology.
 
 Also see the [ADAQ publications page](https://defects.anyterial.se/publications).
 
-## The Altermagnets database
+### The Altermagnets database
 
 - [High-Throughput Quantification of Altermagnetic Band Splitting](https://journals.aps.org/prmaterials/abstract/10.1103/mmdm-hrj4), Ali Sufyan, Brahim Marfoua, J. Andreas Larsson, E. van Loon, and R. Armiento, Phys. Rev. Mater. 10, 044407 (2026).
 
 Also see the [Altermagnets database how-to-cite page](https://altermagnets.anyterial.se/how-to-cite).
 
-## The Hard-coating Alloys DataBase (HADB)
+### The Hard-coating Alloys DataBase (HADB)
 
 - HADB: A materials-property database for hard-coating alloys, H. Levämäki, F. Bock, D. G. Sangiovanni, L. J. S. Johnson, F. Tasnádi, R. Armiento, I. A. Abrikosov, Thin Solid Films 766, 139627 (2023).
 
 Also see the [HADB front page](https://hadb.funmat-ii.se/).
 
-## Anyterial Crystals
+### Anyterial Crystals
 
 We are about to launch a crystal structure database based on the following publication:
 
