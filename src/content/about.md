@@ -9,11 +9,60 @@ base_template: base_default
 
 Anyterial is a portal to materials databases related to the [High-Throughput Toolkit (httk)](https://httk.org/) and resources for materials science and computational materials design.
 
-The portal is maintained as a collaboration of active researchers in materials science. Many contributors are affiliated with the [Unit of Materials Design and Informatics](https://liu.se/en/research/materials-design-and-informatics) at [Theoretical Physics](https://liu.se/en/research/theoretical-physics), [Linköping University](https://www.liu.se) in Sweden.
+The portal is maintained as a collaboration of active researchers in materials science. Many contributors are affiliated with the units of [Materials Design and Informatics](https://liu.se/en/research/materials-design-and-informatics) and [Physics at extreme conditions](https://liu.se/en/research/physics-at-extreme-conditions) at [Theoretical Physics](https://liu.se/en/research/theoretical-physics), [Linköping University](https://www.liu.se) in Sweden.
 
-- Main contact for Anyterial: rickard.armiento [at] liu.se
-- For initiative leads for specific databases, see the respective database websites.
-- For discussions, questions, and announcements, use the [Anyterial GitHub forum](https://github.com/orgs/anyterial/discussions).
+<style>
+  .team-row {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: flex-start;
+  }
+  .team-member, .collaborator, .contributor {
+    margin-right: 30px;
+    text-align: center; /* Center the text */
+  }
+  .team-member img, .collaborator img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .team-member p, .collaborator p {
+    margin: 5px 0;
+  }
+  .contributors img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="section leadership">
+  <h3>Anyterial initative</h3>
+  <div class="team-row">
+    <div class="team-member">
+      <img src="img/people/rickard_armiento.jpg" alt="Rickard Armiento">
+      <p><strong><a href="https://liu.se/en/employee/ricar47">Rickard Armiento</a></strong></p>
+      <small><small><p>Materials Design and Informatics, Theoretical Physics, Dept. of Physics, Chemistry and Biology, Linköping University.</p></small></small>
+    </div>
+    <div class="team-member">
+      <img src="img/people/florian_trybel.jpg" alt="Florian Trybel">
+      <p><strong><a href="https://liu.se/en/employee/flotr82">Florian Trybel</a></strong></p>
+      <small><small><p>Physics at extreme conditions, Theoretical Physics, Dept. of Physics, Chemistry and Biology, Linköping University.</p></small></small>
+    </div>    
+  </div>
+  <small>
+</small>
+</div>
+
+### <a name="contact"></a> Contact
+
+For initiative leads for specific databases, see the respective database websites.
+
+To get into contact with the people maintaining the Anyterial, write to: rickard.armiento&#64;liu.se
+
+For discussions, questions, and announcements, use the [Anyterial GitHub forum](https://github.com/orgs/anyterial/discussions).
 
 ## Stay up to date
 
@@ -27,7 +76,6 @@ Information about new data releases, workshops, conferences, and related project
 Our announcements are also posted on social channels:
 
 - [Anyterial on GitHub](https://github.com/anyterial)
-- [Anyterial on X](https://x.com/anyterial)
 - [Anyterial on Facebook](https://www.facebook.com/anyterial)
 - [Anyterial on LinkedIn](https://www.linkedin.com/company/anyterial)
 - [Anyterial on YouTube](https://www.youtube.com/@anyterial)
@@ -43,3 +91,4 @@ Our announcements are also posted on social channels:
 **Website analytics.** We are not currently collecting user information, including anonymized aggregate visit information. We reserve the right to collect anonymized aggregate information in the future to analyze usage of this website and related services.
 
 **Cookies.** This website does not use cookies.
+
