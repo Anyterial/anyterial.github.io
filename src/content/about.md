@@ -7,9 +7,9 @@ base_template: base_default
 
 # About
 
-Anyterial is a portal to materials databases related to the [High-Throughput Toolkit (httk)](https://httk.org/) and resources for materials science and computational materials design.
+Anyterial is a portal to materials databases related to the [High-Throughput Toolkit (*httk*)](https://httk.org/), tools, and resources for materials science and computational materials design.
 
-The portal is maintained as a collaboration of active researchers in materials science. Many contributors are affiliated with the units of [Materials Design and Informatics](https://liu.se/en/research/materials-design-and-informatics) and [Physics at extreme conditions](https://liu.se/en/research/physics-at-extreme-conditions) at [Theoretical Physics](https://liu.se/en/research/theoretical-physics), [Linköping University](https://www.liu.se) in Sweden.
+This portal is maintained as a collaboration within the units of [Materials Design and Informatics](https://liu.se/en/research/materials-design-and-informatics) and [Physics at extreme conditions](https://liu.se/en/research/physics-at-extreme-conditions) at [Theoretical Physics](https://liu.se/en/research/theoretical-physics), [Linköping University](https://www.liu.se) in Sweden.
 
 <style>
   .team-row {
@@ -58,13 +58,13 @@ The portal is maintained as a collaboration of active researchers in materials s
 
 ### <a name="contact"></a> Contact
 
-For initiative leads for specific databases, see the respective database websites.
+* To get into contact with the people maintaining Anyterial, write to: rickard.armiento&#64;liu.se
 
-To get into contact with the people maintaining the Anyterial, write to: rickard.armiento&#64;liu.se
+* For initiative leads for specific databases, see the respective database websites.
 
-For discussions, questions, and announcements, use the [Anyterial GitHub forum](https://github.com/orgs/anyterial/discussions).
+* For discussions, questions, and announcements, use the [Anyterial GitHub forum](https://github.com/orgs/anyterial/discussions).
 
-## Stay up to date
+### Stay up to date
 
 Information about new data releases, workshops, conferences, and related project updates is posted in the announcements section of our GitHub discussion forum.
 
@@ -82,7 +82,7 @@ Our announcements are also posted on social channels:
 
 <a id="legal"></a>
 
-## Legal and privacy information
+### Legal and privacy information
 
 **Hosting and visit log data.** This website is hosted using [GitHub Pages](https://pages.github.com). GitHub may log information, including personal information and IP visiting addresses, to comply with legal obligations and maintain the security and integrity of its service. For more information, see the [GitHub Privacy Statement](https://help.github.com/en/github/site-policy/github-privacy-statement).
 
