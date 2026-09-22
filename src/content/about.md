@@ -50,7 +50,12 @@ This portal is maintained as a collaboration within the units of [Materials Desi
       <img src="img/people/florian_trybel.jpg" alt="Florian Trybel">
       <p><strong><a href="https://liu.se/en/employee/flotr82">Florian Trybel</a></strong></p>
       <small><small><p>Physics at extreme conditions, Theoretical Physics, Dept. of Physics, Chemistry and Biology, Linköping University.</p></small></small>
-    </div>    
+    </div>
+    <div class="team-member">
+      <img src="img/people/abhijith_parackal.jpg" alt="Abhijith Parackal">
+      <p><strong><a href="https://liu.se/en/employee/abhpa50">Abhijith S Parackal</a></strong></p>
+      <small><small><p>Physics at extreme conditions, Theoretical Physics, Dept. of Physics, Chemistry and Biology, Linköping University.</p></small></small>
+    </div>        
   </div>
   <small>
 </small>
